@@ -1,0 +1,25 @@
+VPC 
+
+NVirgina
+10.22.0.0/16
+
+Public A 10.22.1.0/24
+Public B 10.22.2.0/24
+Public C 10.22.3.0/24
+
+Private A 10.22.11.0/24
+Private B 10.22.12.0/24
+Private A 10.22.13.0/24
+
+Ohio
+10.37.0.0/16
+
+Public A 10.37.1.0/24
+Public B 10.37.2.0/24
+Public C 10.37.1.0/24
+
+Private A 10.37.11.0/24
+Private B 10.37.12.0/24
+Private C 10.37.13.0/24
+
+

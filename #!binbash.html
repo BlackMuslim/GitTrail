@@ -1,0 +1,26 @@
+#!/bin/bash
+# Use this for your user data (script from top to bottom)
+# install httpd (Linux 2 version)
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+macid=$(curl http://169.254.169.254/.../meta.../network/interfaces/macs/)
+echo "
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+<title>Details for EC2 instance</title>
+</head>
+<body>
+<div>
+<h1>PassPort Bro Malgus Clan In the Building </h1>
+<h1>Moroccan Wife On Deck Next Tanzania Kenya Somalia Ethiopia Uganda I cant Choose!</h1>
+<p><b>Instance Name:</b> $(hostname -f) </p>
+<p><b>Instance Private Ip Address: </b> $(curl http://169.254.169.254/latest/meta-data/local-ipv4)</p>
+<p><b>Availability Zone: </b> $(curl -s http://169.254.169.254/.../placement/availability-zone)</p>
+<p><b>Virtual Private Cloud (VPC)</b> $(curl http://169.254.169.254/latest/meta-data/network/interfaces/macs/${macid}/vpc-id)</p>
+</div>
+</body>
+</html>
+" > /var/www/html/index.html
